@@ -1,0 +1,72 @@
+
+// TAB1
+ALGORITHM algorithm_name
+VAR
+     tab1,tab2:array[] INTEGER;
+     s:INTEGER;
+BEGIN
+    s:=0;
+    FOR i FROM 0 TO tab1.lenght-1  i++  DO
+        FOR j FROM  TO tab2.lenght-1 i++  DO
+            IF (tab1[i]=tab2[j]) THEN
+                s=tab1[i]+tab2[j];
+            END_IF
+        END_FOR
+    END_FOR
+    write(s);
+END
+// TAB2
+ALGORITHM algorithm_name
+VAR 
+ tab1,tab2:array[] INTEGER;
+ s:INTEGER;
+ k:BOOLEAN
+BEGIN
+  k:=false;
+  s:=0;
+  FOR i FROM 0 TO tab1.lenght-1 i++  DO
+      {IF (tab1[i]=tab2[j]) THEN
+          k=true;}
+            END_IF
+  END_FOR
+          FOR j FROM 0 TO tab2.lenght-1 i++  DO
+      {IF (tab1[i]=tab2[j]) THEN
+          k=true;}
+          END_IF
+          END_FOR
+          IF (k=false) THEN
+              s+=tab1[j]
+          END_IF
+          write (s);
+    
+END
+// TAB3
+ALGORITHM algorithm_name
+VAR
+    tab1,tab2:array[]
+    i,j,s:INTEGER
+    h:HASH_TABLE <INTEGER,INTEGER>
+BEGIN
+    FOR i FROM 0 TO tab1.lenght-1 i++  DO
+        h.insert (tab1,1)
+    END_FOR
+   
+   
+    FOR i FROM 0 TO tab2.lenght-1 i++  DO
+        IF (h.lookup(tab2[i]=true)) THEN
+            h.insert(tab2[i],2)
+            ELSE 
+            h.insert(tab2[i],1)
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO tab1.lenght-1 i++  DO
+        IF (h.get(tab1[i]=1)) THEN
+            s+=tab1[i]
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO tab2.lenght-1 i++  DO
+        IF (h.get(tab2[i]=1)) THEN
+            s+=tab2[i]
+        END_IF
+    END_FOR
+END
